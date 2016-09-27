@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="xp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="ctrl1">
+    {{fn()}}
+    {{age}}
+    <button ng-click="add()">点击</button>
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var app=angular.module('xp',[]);
+    app.controller('ctrl1',['$scope',function(a){
+        a.age=1;
+        a.add=function(){
+            a.age++;
+        }
+        a.fn=function(){
+            return 100;
+        }
+    }])
+</script>
+
+</body>
+</html>

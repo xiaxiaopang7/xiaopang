@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="xp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="ctrl1">
+    {{name}}
+    <div ng-controller="ctrl2">
+        {{name}}
+    </div>
+</div>
+
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var app=angular.module('xp',[])
+    app.run(function($rootScope){
+        $rootScope.name='zfpx'
+    })
+    app.controller('ctrl1',function($scope){
+//        $scope.name='xp'
+    })
+    app.controller('ctrl2',['$scope','$rootScope',function(a,b){
+        a.name='qq'
+    }])
+</script>
+
+</body>
+</html>
